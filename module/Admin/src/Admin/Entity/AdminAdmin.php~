@@ -1,0 +1,105 @@
+<?php
+
+namespace Admin\Entity;
+
+use Core\Entity\AbstractEntity;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * AdminAdmin
+ *
+ * @ORM\Table(name="admin_admin", uniqueConstraints={@ORM\UniqueConstraint(name="email_UNIQUE", columns={"email"})})
+ * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
+ * @ORM\Entity(repositoryClass="Admin\Entity\AdminAdminRepository")
+ */
+class AdminAdmin extends AbstractEntity
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nome", type="string", length=45, nullable=true)
+     */
+    private $nome;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="login", type="string", length=20, nullable=false)
+     */
+    private $login;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="senha", type="string", length=40, nullable=true)
+     */
+    private $senha;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cpf", type="string", length=15, nullable=true)
+     */
+    private $cpf;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rg", type="string", length=10, nullable=true)
+     */
+    private $rg;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="tipo", type="integer", nullable=true)
+     */
+    private $tipo = '1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="status", type="integer", nullable=true)
+     */
+    private $status = '1';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=100, nullable=false)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="celular", type="string", length=15, nullable=true)
+     */
+    private $celular;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_cadastro", type="datetime", nullable=true)
+     */
+    private $dataCadastro;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_alteracao", type="datetime", nullable=true)
+     */
+    private $dataAlteracao;
+
+
+}

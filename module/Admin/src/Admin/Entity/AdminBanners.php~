@@ -1,0 +1,70 @@
+<?php
+
+namespace Admin\Entity;
+
+use Core\Entity\AbstractEntity;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * AdminBanners
+ *
+ * @ORM\Table(name="admin_banners")
+ * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
+ * @ORM\Entity(repositoryClass="Admin\Entity\AdminBannersRepository")
+ */
+class AdminBanners extends AbstractEntity
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="url", type="string", length=150, nullable=true)
+     */
+    private $url;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="foto", type="string", length=100, nullable=true)
+     */
+    private $foto;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="views", type="integer", nullable=true)
+     */
+    private $views;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="clicks", type="integer", nullable=true)
+     */
+    private $clicks;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="status", type="integer", nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_admin", type="integer", nullable=true)
+     */
+    private $idAdmin;
+
+
+}

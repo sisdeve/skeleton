@@ -1,0 +1,49 @@
+<?php
+
+namespace Admin\Entity;
+
+use Core\Entity\AbstractEntity;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * AdminSitmap
+ *
+ * @ORM\Table(name="admin_sitmap")
+ * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
+ * @ORM\Entity(repositoryClass="Admin\Entity\AdminSitmapRepository")
+ */
+class AdminSitmap extends AbstractEntity
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="lastmod", type="datetime", nullable=true)
+     */
+    private $lastmod;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="loc", type="string", length=150, nullable=true)
+     */
+    private $loc;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_cadastro", type="datetime", nullable=true)
+     */
+    private $dataCadastro;
+
+
+}

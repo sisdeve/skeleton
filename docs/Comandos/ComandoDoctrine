@@ -1,0 +1,8 @@
+Criação de Entidade
+vendor/bin/doctrine-module orm:convert-mapping --filter="AdminSitmap" --from-database annotation --namespace="Admin\\Entity\\" module/Admin/src/
+
+Geraçãodos Gets and Sets
+vendor/bin/doctrine-module orm:generate-entities --generate-annotations="true" --generate-methods="true" module/Admin/src
+
+Criação dos Repositorios
+vendor/bin/doctrine-module orm:generate-repositories module/Admin/src/

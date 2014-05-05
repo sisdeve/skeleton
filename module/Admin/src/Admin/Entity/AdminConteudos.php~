@@ -1,0 +1,112 @@
+<?php
+
+namespace Admin\Entity;
+
+use Core\Entity\AbstractEntity;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * AdminConteudos
+ *
+ * @ORM\Table(name="admin_conteudos")
+ * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
+ * @ORM\Entity(repositoryClass="Admin\Entity\AdminConteudosRepository")
+ */
+class AdminConteudos extends AbstractEntity
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="titulo", type="string", length=250, nullable=true)
+     */
+    private $titulo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="conteudo", type="text", nullable=true)
+     */
+    private $conteudo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descricao", type="text", nullable=true)
+     */
+    private $descricao;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="palavra_chaves", type="text", nullable=true)
+     */
+    private $palavraChaves;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fontes", type="string", length=100, nullable=true)
+     */
+    private $fontes;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="status", type="integer", nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_cadastro", type="datetime", nullable=true)
+     */
+    private $dataCadastro;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_alteracao", type="datetime", nullable=true)
+     */
+    private $dataAlteracao;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="views", type="integer", nullable=true)
+     */
+    private $views;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="clicks", type="integer", nullable=true)
+     */
+    private $clicks;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="autor", type="string", length=100, nullable=true)
+     */
+    private $autor;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_admin", type="integer", nullable=true)
+     */
+    private $idAdmin;
+
+
+}

@@ -1,0 +1,84 @@
+<?php
+
+namespace Admin\Entity;
+
+use Core\Entity\AbstractEntity;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * AdminContatos
+ *
+ * @ORM\Table(name="admin_contatos")
+ * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
+ * @ORM\Entity(repositoryClass="Admin\Entity\AdminContatosRepository")
+ */
+class AdminContatos extends AbstractEntity
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nome", type="string", length=100, nullable=true)
+     */
+    private $nome;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=100, nullable=true)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telefone", type="string", length=15, nullable=true)
+     */
+    private $telefone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="assunto", type="string", length=200, nullable=true)
+     */
+    private $assunto;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="conteudo", type="text", nullable=true)
+     */
+    private $conteudo;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_cadastro", type="datetime", nullable=true)
+     */
+    private $dataCadastro;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="status", type="integer", nullable=true)
+     */
+    private $status = '1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="respondida", type="integer", nullable=true)
+     */
+    private $respondida = '0';
+
+
+}

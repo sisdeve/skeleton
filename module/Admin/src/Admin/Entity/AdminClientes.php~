@@ -1,0 +1,119 @@
+<?php
+
+namespace Admin\Entity;
+
+use Core\Entity\AbstractEntity;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * AdminClientes
+ *
+ * @ORM\Table(name="admin_clientes")
+ * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
+ * @ORM\Entity(repositoryClass="Admin\Entity\AdminClientesRepository")
+ */
+class AdminClientes extends AbstractEntity
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nome_fantasia", type="string", length=100, nullable=true)
+     */
+    private $nomeFantasia;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="razao_social", type="string", length=45, nullable=true)
+     */
+    private $razaoSocial;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cpf_cnpj", type="string", length=45, nullable=true)
+     */
+    private $cpfCnpj;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rg_ie", type="string", length=45, nullable=true)
+     */
+    private $rgIe;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="site", type="string", length=100, nullable=true)
+     */
+    private $site;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="contato", type="string", length=45, nullable=true)
+     */
+    private $contato;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telefone", type="string", length=15, nullable=true)
+     */
+    private $telefone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="celular", type="string", length=15, nullable=true)
+     */
+    private $celular;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_cadastro", type="datetime", nullable=true)
+     */
+    private $dataCadastro;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_alteracao", type="datetime", nullable=true)
+     */
+    private $dataAlteracao;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=45, nullable=true)
+     */
+    private $email;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="status", type="integer", nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="id_admin", type="string", length=45, nullable=true)
+     */
+    private $idAdmin;
+
+
+}

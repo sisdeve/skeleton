@@ -1,0 +1,105 @@
+<?php
+
+namespace Admin\Entity;
+
+use Core\Entity\AbstractEntity;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * AdminParceiros
+ *
+ * @ORM\Table(name="admin_parceiros")
+ * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
+ * @ORM\Entity(repositoryClass="Admin\Entity\AdminParceirosRepository")
+ */
+class AdminParceiros extends AbstractEntity
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="contato", type="string", length=45, nullable=true)
+     */
+    private $contato;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=100, nullable=true)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telefone", type="string", length=15, nullable=true)
+     */
+    private $telefone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="links", type="string", length=100, nullable=true)
+     */
+    private $links;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="foto", type="string", length=100, nullable=true)
+     */
+    private $foto;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="clicks", type="integer", nullable=true)
+     */
+    private $clicks;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="views", type="integer", nullable=true)
+     */
+    private $views;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=45, nullable=true)
+     */
+    private $status = '1';
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_cadastro", type="datetime", nullable=true)
+     */
+    private $dataCadastro;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_alteracao", type="datetime", nullable=true)
+     */
+    private $dataAlteracao;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_admin", type="integer", nullable=true)
+     */
+    private $idAdmin;
+
+
+}
